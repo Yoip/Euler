@@ -1,2 +1,2 @@
-def sqube(a,b)
+def sqube(a,b):
   return a**2*b**3

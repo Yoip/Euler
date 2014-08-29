@@ -12,7 +12,7 @@ def isPrime(n):
         if n%i == 0:
             return False
     return True
-def isPrimeproof(n):
+def isPrimeProof(n):
     nums = []
     for i in range(len(str(n))):
         for a in range(10):

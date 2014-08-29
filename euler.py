@@ -100,3 +100,5 @@ def isprimeproof(n):
             if isprime(int(str(n)[:i]+str(a)+str(n)[i+1:])):
                 return False
     return True
+def sqube(a,b):
+  return a**2*b**3

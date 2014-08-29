@@ -1,1 +1,2 @@
-print("austin is here")
+def sqube(a,b)
+  return a**2*b**3

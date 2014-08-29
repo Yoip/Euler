@@ -103,3 +103,22 @@ def isprimeproof(n):
     return True
 def sqube(a,b):
   return a**2*b**3
+def primefactors(n):
+    primfac = []
+    returnv = []
+    d = 2
+    while d*d <= n:
+        while (n % d) == 0:
+            primfac.append(d)
+            n /= d
+        d += 1
+    if n > 1:
+       primfac.append(int(n))
+    for i in set(primfac):
+        returnv.append((i,primfac.count(i)))
+    return returnv
+def issqube(n):
+    for (x,y) in primefactors(n):
+        if not y%2 == 0 and not y%3==0:
+                return False
+    return True

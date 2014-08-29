@@ -12,13 +12,10 @@ def isPrime(n):
         if n%i == 0:
             return False
     return True
-def isPrimeProof(n):
-    nums = []
+def isPrimeproof(n):
     for i in range(len(str(n))):
         for a in range(10):
-            nums.append(int(str(n)[:i]+str(a)+str(n)[i+1:]))
-    for b in nums:
-        if isPrime(b):
-            return False
+            if isPrime(int(str(n)[:i]+str(a)+str(n)[i+1:])):
+                return False
     return True
   

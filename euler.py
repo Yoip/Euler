@@ -122,3 +122,7 @@ def issqube(n):
         if not y%2 == 0 and not y%3==0:
                 return False
     return True
+def primeproofs(n, low=1):
+    for i in range(low,n):
+        if i%2 or i%5: continue
+        if isprimeproof(i): yield i

@@ -1,6 +1,7 @@
 from math import *
 from collections import *
 from itertools import *
+#no one cares if they arent camelcased
 def factor(n):
     factors = []
     root = int(sqrt(n)) + 1

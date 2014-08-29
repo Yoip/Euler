@@ -94,7 +94,7 @@ def ispalindrome(n):
     return reverse(n)==n
 def digitsum(n):
     return sum([int(i) for i in str(n)])
-def isPrimeproof(n):
+def isprimeproof(n):
     for i in range(len(str(n))):
         for a in range(10):
             if isprime(int(str(n)[:i]+str(a)+str(n)[i+1:])):

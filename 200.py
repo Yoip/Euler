@@ -1,4 +1,4 @@
-from Euler import *
+from euler import *
 def sqube(a,b):
   return a**2*b**3
 def isPrime(n):

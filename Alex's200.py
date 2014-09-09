@@ -1,23 +1,32 @@
-from Euler import *
-def sqube(a,b):
-  return a**2*b**3
-def isPrime(n):
-    if n==0:
-        return False
-    if n==1:
-        return False
-    if n==2:
-        return True
-    for i in range(2,int(n**.5)+1):
-        if n%i == 0:
-            return False
-    return True
-def isPrimeproof(n):
-    nums = []
-    for i in range(len(str(n))):
-        for a in range(10):
-            nums.append(int(str(n)[:i]+str(a)+str(n)[i+1:]))
-    for b in nums:
-        if isPrime(b):
-            return False
-    return True
+from time import *
+from itertools import *
+from euler import *
+g = time()
+squbes = []
+for a in sieve(1000):
+    for b in sieve(1000):
+        if not a==b:
+            squbes.append(sqube(a,b))
+h=time()
+print(len(squbes))
+print(h-g)
+c=time()
+squbestwo = [i for i in squbes if "200" in str(i)]
+d=time()
+print(len(squbestwo))
+print(d-c)
+e=time()
+aa = 0
+squbesthree = []
+for i in sorted(squbestwo):
+    if isprimeproof(i):
+        print(i)
+        squbesthree.append(i)
+    aa+=1
+    print(aa)
+print(squbestwo[323])
+f=time()
+print(len(squbesthree))
+print(f-e)
+
+

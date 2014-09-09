@@ -103,3 +103,15 @@ def isprimeproof(n):
     return True
 def sqube(a,b):
   return a**2*b**3
+def samedigits(a, b):
+    return sorted(str(a)) == sorted(str(b))
+def anagrams(a, b):
+    return sorted(a) == sorted(b)
+def issquare(n):
+  x = n // 2
+  s = {x}
+  while x * x != n:
+    x = (x + (n // x)) // 2
+    if x in s: return False
+    s.add(x)
+  return True

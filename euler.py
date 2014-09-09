@@ -115,3 +115,26 @@ def issquare(n):
     if x in s: return False
     s.add(x)
   return True
+def primefactors(n):
+    primfac = []
+    returnv = []
+    d = 2
+    while d*d <= n:
+        while (n % d) == 0:
+            primfac.append(d)
+            n /= d
+        d += 1
+    if n > 1:
+       primfac.append(int(n))
+    for i in set(primfac):
+        returnv.append((i,primfac.count(i)))
+    return returnv
+def issqube(n):
+    for (x,y) in primefactors(n):
+        if not y%2 == 0 and not y%3==0:
+                return False
+    return True
+def primeproofs(n, low=1):
+    for i in range(low,n):
+        if i%2 or i%5: continue
+        if isprimeproof(i): yield i

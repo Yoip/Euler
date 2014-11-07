@@ -1,6 +1,8 @@
 from math import *
 from collections import *
 from itertools import *
+from fractions import *
+from random import *
 #no one cares if they arent camelcased
 def factor(n):
     factors = []
@@ -138,3 +140,16 @@ def primeproofs(n, low=1):
     for i in range(low,n):
         if i%2 or i%5: continue
         if isprimeproof(i): yield i
+def pollardRho(N):
+        if N%2==0:
+                return 2
+        x = random.randint(1, N-1)
+        y = x
+        c = random.randint(1, N-1)
+        g = 1
+        while g==1:             
+                x = ((x*x)%N+c)%N
+                y = ((y*y)%N+c)%N
+                y = ((y*y)%N+c)%N
+                g = gcd(abs(x-y),N)
+        return g
